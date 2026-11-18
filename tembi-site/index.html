@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tembí – Alimentamos a liberdade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5EDC0;--card:#FCF8E1;--ink:#5F2E00;--soft:#7a4a1c;--olive:#838B32;--olive-ink:#5f6620;--orange:#FC931C;--sky:#49AEFF;--red:#FB1203;--pink:#DD7FD8;--line:#5F2E0033;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1500;--card:#3a1f06;--ink:#F5EDC0;--soft:#d9cfa0;--olive-ink:#b9c25c;--line:#F5EDC033;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2a1500;--card:#3a1f06;--ink:#F5EDC0;--soft:#d9cfa0;--olive-ink:#b9c25c;--line:#F5EDC033;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Nunito,system-ui,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-weight:900;line-height:1.1;margin:0 0 .6em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:64ch}
+section{padding:4.5rem 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.6rem;padding-bottom:.6rem}
+nav img{height:2.2rem;width:auto}
+nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav a{text-decoration:none;font-weight:800;font-size:.95rem;white-space:nowrap}
+nav a:hover{color:var(--olive-ink)}
+.hero{padding-top:3rem;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+.hero h1 span{color:var(--olive-ink)}
+.lede{font-size:1.2rem;color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.6rem;padding:0;list-style:none}
+.tags li{background:var(--olive);color:#fff;font-weight:800;padding:.3rem .9rem;border-radius:99px;font-size:.95rem}
+.tags li:nth-child(2){background:var(--orange);color:#3b1c00}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);font-weight:900;padding:.8rem 1.5rem;border-radius:99px;text-decoration:none}
+.btn:hover{background:var(--olive-ink)}
+.boxstage{position:relative;display:grid;place-items:center}
+.boxstage::before{content:"";position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:var(--orange);opacity:.9}
+.boxstage img{position:relative;width:min(100%,430px);filter:drop-shadow(0 18px 18px #0004)}
+.alt{background:var(--card);border-block:1px solid var(--line)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.panel{background:var(--bg);border:2px solid var(--ink);border-radius:22px;padding:1.5rem}
+.alt .panel{background:var(--bg)}
+.panel h3{display:flex;align-items:center;gap:.6rem}
+.dot{width:.9rem;height:.9rem;border-radius:50%;background:var(--olive);flex:none}
+.quote{font-size:1.5rem;font-weight:800;color:var(--olive-ink);max-width:30ch}
+.prod{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.prod ul{padding-left:1.1rem;margin:0 0 1em}
+.sphere{width:5.5rem;height:5.5rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff9,#0000 40%),var(--orange);border:3px solid var(--ink);margin-bottom:1rem}
+.steps{counter-reset:s;list-style:none;padding:0;margin:1.5rem 0;display:grid;gap:.8rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:center;background:var(--bg);border:2px solid var(--ink);border-radius:16px;padding:.8rem 1rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--olive);color:#fff;font-weight:900}
+.kit{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0 0 1.5rem}
+.kit li{border:2px dashed var(--ink);border-radius:12px;padding:.35rem .9rem;font-weight:800}
+.group{margin:0 auto 2.5rem;max-width:760px}
+.mascots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.mascot{background:var(--card);border:2px solid var(--ink);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.mascot .pic{padding:1rem 1rem 0;height:280px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}
+.mascot .pic img{height:100%;width:100%;object-fit:contain;object-position:center bottom}
+.mascot .txt{position:relative;background:var(--card);border-top:2px solid var(--ink)}
+.mascot .txt{padding:1rem 1.2rem 1.3rem}
+.mascot h3{margin-bottom:.1em}
+.mascot .sp{color:var(--soft);font-weight:600;margin:0 0 .6em}
+.shape{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.95rem;margin-bottom:.6rem}
+.shape i{display:block;width:1.2rem;height:1.2rem;background:var(--c)}
+.c{border-radius:50%}.t{clip-path:polygon(50% 0,100% 100%,0 100%)}.r{width:.9rem!important;height:1.5rem!important}.q{border-radius:2px}
+.mascot p{margin:0;font-size:1rem}
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.8rem;margin-top:1.5rem}
+.sw div{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--bg)}
+.sw b{display:block;height:84px}
+.sw span{display:block;padding:.5rem .7rem;font-weight:800;font-size:.9rem;line-height:1.3}
+.sw small{display:block;font-weight:600;color:var(--soft)}
+footer{background:var(--ink);color:var(--bg);padding:3rem 0 2.5rem;font-size:.98rem}
+:root[data-theme="dark"] footer{background:#1a0d00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#1a0d00}}
+footer img{height:3rem;width:auto;margin-bottom:1rem}
+footer p{max-width:70ch}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.boxstage{order:-1}section{padding:3.2rem 0}nav .wrap{flex-direction:column;align-items:flex-start;gap:.3rem}nav ul{width:100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Principal"><div class="wrap">
+<a href="#inicio" aria-label="Tembí, início"><img src="imagens/logotipo.webp" alt="Tembí"></a>
+<ul><li><a href="#marca">A marca</a></li><li><a href="#produtos">Produtos</a></li><li><a href="#jogo">O jogo</a></li><li><a href="#mascotes">Mascotes</a></li><li><a href="#cores">Identidade</a></li></ul>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="wrap">
+<div>
+<h1>Alimentamos a <span>liberdade</span></h1>
+<p class="lede">Tembí é uma marca de cereais matinais e leites vegetais criada para crianças e para quem quer comer sem preocupações. Aqui a embalagem também vira brincadeira.</p>
+<ul class="tags"><li>100% vegetal</li><li>Sem glúten</li><li>Sem lactose</li></ul>
+<a class="btn" href="#jogo">Conheça o jogo da caixa</a>
+</div>
+<div class="boxstage"><img src="imagens/caixa-cereal.webp" alt="Caixa do cereal matinal Tembí, 770 g, com a capivara Babí segurando uma colher"></div>
+</div></header>
+
+<section id="marca"><div class="wrap">
+<h2>Uma marca com raiz brasileira</h2>
+<p class="quote">“Aqui você come sem preocupações.”</p>
+<p>O nome Tembí vem de <em>tembi’u</em>, palavra de origem tupi ligada a alimento e comida. Da escolha do nome às cores e aos personagens, tudo na marca parte do Brasil.</p>
+<div class="cols">
+<div class="panel"><h3><span class="dot"></span>Identidade nacional</h3><p>Palavras indígenas, uma paleta inspirada na flora brasileira e mascotes da nossa fauna dão à Tembí uma cara própria.</p></div>
+<div class="panel"><h3><span class="dot" style="background:var(--orange)"></span>Alimentação consciente</h3><p>Apresentar às crianças uma alimentação à base de vegetais, com a variedade de frutas, verduras e outros alimentos do país como inspiração.</p></div>
+<div class="panel"><h3><span class="dot" style="background:var(--sky)"></span>Comida para todos</h3><p>A proposta vai além do público infantil: também acolhe quem tem intolerâncias, alergias ou evita ingredientes de origem animal.</p></div>
+</div></div></section>
+
+<section class="alt" id="produtos"><div class="wrap">
+<h2>Dois produtos, uma experiência</h2>
+<p>As duas embalagens foram pensadas para funcionar sozinhas, mas ficam melhores juntas na mesma compra.</p>
+<div class="prod">
+<article class="panel"><h3>Cereal matinal Tembí</h3>
+<p>Cereal de milho e arroz crocante, com sabor de chocolate ao leite e chocolate branco. Caixa de 770 g.</p>
+<ul><li>Sem glúten e sem lactose</li><li>Produto vegano certificado</li><li>A parte de trás da caixa é um tabuleiro</li></ul></article>
+<article class="panel"><div class="sphere" role="img" aria-label="Compartimento esférico da tampa"></div><h3>Leite vegetal de castanha de caju</h3>
+<p>Embalagem de formato convencional com um diferencial na tampa: um compartimento esférico guarda uma miniatura surpresa de um dos mascotes. Ele foi pensado para complementar a caixa de cereal: juntos formam um café da manhã vegetal completo, e levar os dois para casa amplia o jogo, com mais mascotes para jogar.</p>
+<ul><li>Miniatura sortida em cada embalagem</li><li>Peões extras para o jogo do cereal</li><li>Pode ser colecionado sem jogar</li></ul></article>
+</div></div></section>
+
+<section id="jogo"><div class="wrap">
+<h2>A caixa é o tabuleiro</h2>
+<p>Depois do café da manhã, vire a caixa do cereal: o verso é um circuito com casas de surpresas e desafios. O jogo existe para despertar a curiosidade das crianças e a conexão delas com a fauna e a flora brasileiras: é aprender enquanto se diverte.</p>
+<ul class="kit" aria-label="O que vem na caixa"><li>1 tabuleiro</li><li>2 joguetes sortidos</li><li>1 dado</li></ul>
+<h3>Como jogar</h3>
+<ol class="steps">
+<li>Escolha seu peão e coloque-o na casa de INÍCIO.</li>
+<li>Na sua vez, jogue o dado e avance o número de casas indicado.</li>
+<li>Fique de olho nas casas especiais! Cada uma tem um desafio ou uma surpresa.</li>
+<li>Siga as instruções da casa onde você parar.</li>
+<li>Depois, passe a vez para o próximo jogador.</li>
+</ol>
+<p><strong>Ganha quem chegar primeiro à linha de CHEGADA!</strong></p>
+<p>Com os dois peões que acompanham o cereal já dá para jogar. Para ter mais jogadores, cada leite vegetal traz outro mascote, e como são sortidos, podem vir repetidos.</p>
+</div></section>
+
+<section class="alt" id="mascotes"><div class="wrap">
+<h2>Conheça os mascotes</h2>
+<p>Quatro animais da fauna brasileira dão vida ao jogo. Cada um tem uma forma e uma cor de peão de tabuleiro que mostram sua personalidade, e a pelagem original do bicho foi mantida.</p>
+<img class="group" src="imagens/mascotes-juntos.webp" alt="Os quatro mascotes juntos: loba-guará, capivara, onça-pintada e tamanduá-bandeira">
+<div class="mascots">
+<article class="mascot"><div class="pic"><img src="imagens/babi.webp" alt="Babí, a capivara, segurando uma colher"></div><div class="txt"><h3>Babí</h3><p class="sp">Capivara, mascote oficial</p><span class="shape"><i class="c" style="--c:var(--olive)"></i>Círculo verde</span><p>Amigável e animada. Tem alergia a glúten.</p></div></article>
+<article class="mascot"><div class="pic"><img src="imagens/marcelina.webp" alt="Marcelina, a loba-guará, acenando"></div><div class="txt"><h3>Marcelina</h3><p class="sp">Loba-guará</p><span class="shape"><i class="t" style="--c:var(--red)"></i>Triângulo vermelho</span><p>Extrovertida e competitiva. É vegetariana.</p></div></article>
+<article class="mascot"><div class="pic"><img src="imagens/tales.webp" alt="Tales, o tamanduá-bandeira, de braços cruzados"></div><div class="txt"><h3>Tales</h3><p class="sp">Tamanduá-bandeira</p><span class="shape"><i class="r" style="--c:var(--sky)"></i>Retângulo azul</span><p>Introspectivo e tranquilo. Simplesmente gosta de comer saudável.</p></div></article>
+<article class="mascot"><div class="pic"><img src="imagens/theo.webp" alt="Théo, a onça-pintada, acenando"></div><div class="txt"><h3>Théo</h3><p class="sp">Onça-pintada</p><span class="shape"><i class="q" style="--c:var(--orange)"></i>Quadrado amarelo</span><p>Firme e gentil. Tem intolerância à lactose.</p></div></article>
+</div></div></section>
+
+<section id="cores"><div class="wrap">
+<h2>Cores e letras da Tembí</h2>
+<p>A paleta nasceu de elementos brasileiros. Para textos corridos, a marca usa a Nunito, uma fonte sem serifa de leitura fácil. O logotipo é um desenho próprio, com pontas angulares, mas fluidas, e elementos de folha e caju que lembram a matéria-prima vegetal.</p>
+<div class="sw">
+<div><b style="background:#F5EDC0"></b><span>Flor de mandacaru<small>#F5EDC0</small></span></div>
+<div><b style="background:#DD7FD8"></b><span>Manacá<small>#DD7FD8</small></span></div>
+<div><b style="background:#5F2E00"></b><span>Castanha de caju<small>#5F2E00</small></span></div>
+<div><b style="background:#838B32"></b><span>Mandacaru<small>#838B32</small></span></div>
+<div><b style="background:#FC931C"></b><span>Caju<small>#FC931C</small></span></div>
+<div><b style="background:#49AEFF"></b><span>Arara azul<small>#49AEFF</small></span></div>
+<div><b style="background:#FB1203"></b><span>Guaraná<small>#FB1203</small></span></div>
+</div></div></section>
+
+<footer><div class="wrap">
+<img src="imagens/logotipo.webp" alt="Tembí">
+<p>Tembí é uma marca fictícia, criada como trabalho técnico da disciplina Projeto Integrador Multidisciplinar do curso de Design Gráfico da Universidade Paulista (UNIP), em Santos, 2026.</p>
+<p>Gabriel Yule Rocha Augusto, Ananda Mayii Fernandez, Alanis Pinheiro da Silva, Victoria Roberta Lopes, Maria Eduarda Santos Rocha e Guilherme Alexandre Santos Oliveira.<br>Orientador: Prof. Carlos Roberto Cordeiro.</p>
+</div></footer>
+</body>
+</html>
